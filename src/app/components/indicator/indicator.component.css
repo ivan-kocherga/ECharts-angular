@@ -1,0 +1,128 @@
+.indicator {
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  border-radius: 15px;
+}
+
+/* Simple indicator */
+.indicator-simple {
+  display: flex;
+  flex-direction: column;
+  width: 120px;
+  height: 100px;
+  border-color: black;
+  border-width: 2px;
+}
+
+.indicator-simple .indicator-simple--wrapper-title {
+  flex-grow: 1;
+  flex-shrink: 0;
+  flex-basis: auto;
+}
+
+.indicator-simple  .indicator-title {
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 10px;
+  margin: 5px 10px 5px 10px;
+}
+
+.indicator-simple .indicator-simple--wrapper-info {
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: auto;
+  font-size: 8px;
+  line-height: 10px;
+  color: grey;
+  font-weight: 700;
+}
+
+.indicator-simple .indicator-value {
+  font-size: 22px;
+  padding: 5px;
+  font-weight: 700;
+  text-align: center;
+  margin: 0;
+}
+
+.indicator-simple .indicator-info {
+  height: 26px;
+  margin: 0;
+  padding: 0;
+}
+
+.indicator-simple .indicator-info--max {
+  text-align: center;
+}
+
+
+/* NgxGauge indicator */
+.indicator-ngxgauge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 120px;
+  height: 100px;
+  border-color: black;
+  border-width: 2px;
+}
+
+.indicator-ngxgauge .indicator-simple--wrapper-title {
+  flex-grow: 1;
+  flex-shrink: 0;
+  flex-basis: auto;
+}
+
+.indicator-ngxgauge  .indicator-title {
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 10px;
+  margin: 5px 10px;
+}
+
+.indicator-ngxgauge .indicator-simple--wrapper-info {
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: auto;
+  font-size: 8px;
+  line-height: 10px;
+  color: grey;
+  font-weight: 700;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.indicator-ngxgauge .indicator-info {
+  display: flex;
+  justify-content:space-between;
+  align-self: center;
+  width: 40px;
+  height: 26px;
+  padding: 0;
+  margin-top: -7px;
+}
+
+.indicator-info--min {
+  margin: 0;
+  padding: 0;
+}
+
+.indicator-info--max {
+  margin: 0;
+  padding: 0;
+}
+
+.indicator-info--min p {
+  margin: 0;
+  padding: 0;
+}
+
+.indicator-info--max p {
+  font-size: 8px;
+  line-height: 10px;
+  margin: 0;
+  padding: 0;
+}

@@ -1,0 +1,66 @@
+<div class="indicator" style="background:{{ indicator.indicatorColor }}">
+
+  <ng-container *ngIf="!indicator.indicatorNgxGauge">
+
+  <div class="indicator-simple">
+    <div class="indicator-simple--wrapper-title">
+      <div class="indicator-title" style="color:{{ indicator.titleColor }}">{{ indicator.title }}</div>
+    </div>
+
+    <div class="indicator-simple--wrapper-info">
+      <div class="indicator-append">{{ indicator.unit }}</div>
+
+      <div class="indicator-value" style="color:{{ indicator.valueColor }};">{{ indicator.value }}</div>
+
+      <div class="indicator-info">
+        <div class="indicator-info--max">
+          <ng-container *ngIf="indicator.maxValue">
+            <p class="indicator-info--max-title">max</p>
+            <p class="indicator-info--max-value">{{ indicator.maxValue }}</p>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  </ng-container>
+
+  <ng-container *ngIf="indicator.indicatorNgxGauge">
+
+    <div class="indicator-ngxgauge">
+      <div class="indicator-simple--wrapper-title">
+        <div class="indicator-title" style="color:{{ indicator.titleColor }}">{{ indicator.title }}</div>
+      </div>
+
+      <div class="indicator-simple--wrapper-info">
+        <div class="indicator-append">{{ indicator.unit }}</div>
+
+        <ngx-gauge style="color:{{ indicator.valueColor }};"
+          [size]=60
+          type="semi"
+          [min]=indicator.minValue
+          [max]=indicator.maxValue
+          [value]=indicator.value
+          cap="round"
+          [thick]=8
+          [foregroundColor]=indicator.scaleBackground
+          [backgroundColor]=indicator.indicatorBackground>
+        </ngx-gauge>
+
+        <div class="indicator-info">
+          <div class="indicator-info--min">
+            <p class="indicator-info--min-title">min</p>
+            <p class="indicator-info--min-value">{{ indicator.minValue }}</p>
+          </div>
+          <div class="indicator-info--max">
+            <p class="indicator-info--max-title">max</p>
+            <p class="indicator-info--max-value">{{ indicator.maxValue }}</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </ng-container>
+
+</div>

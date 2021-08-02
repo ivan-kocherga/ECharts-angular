@@ -1,1 +1,27 @@
 /* You can add global styles to this file, and also import other style files */
+
+body {
+  min-width: 1200px;
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", Arial, sans-serif;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.button {
+  font: inherit;
+  text-align: center;
+  vertical-align: middle;
+
+  border: none;
+}
+
+div.reading-block {
+  margin-top: 5px !important;
+  font-size: 14px !important;
+  font-weight: 700 !important;
+}
