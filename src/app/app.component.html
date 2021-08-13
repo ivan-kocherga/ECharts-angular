@@ -25,12 +25,16 @@
       <section class="indicators">
 
         <ul class="indicators-list">
-          <li class="indicator-item" *ngFor="let indicator of indicators">
-            <app-indicator [indicator]="indicator"></app-indicator>
+          <li class="indicator-item" *ngFor="let indicator of indicators; let i = index">
+            <app-indicator [indicator]="indicator" [indexIndicator]="i"></app-indicator>
           </li>
         </ul>
 
       </section>
+
+    <section class="charts">
+      <app-charts></app-charts>
+    </section>
 
   </article>
 
@@ -42,4 +46,5 @@
     <p class="popup-state-server--message">Разрыв связи</p>
   </section>
 
-<div class="container">
+
+</div>

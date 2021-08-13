@@ -1,0 +1,41 @@
+<div class="charts">
+  <div class="charts__state">
+    <div class="charts__state-select">
+      <select>
+        <option value="now">Текущая смена</option>
+      </select>
+    </div>
+    <div class="charts__state-buttons">
+      <button class="buttons__export">
+        <img src="./assets/images/export.png" alt="">
+        <span>
+          Экспорт
+        </span>
+      </button>
+
+      <span class="buttons__resize">
+        <img src="./assets/images/resize.png" alt="">
+      </span>
+    </div>
+  </div>
+  <ng-container *ngIf="indicators.length > 0; else indicatorsLength0">
+    <div echarts [options]="chartOption" class="chart"></div>
+  </ng-container>
+  <ng-template #indicatorsLength0>
+    <p class="not-chart">
+      Нету данных!
+    </p>
+  </ng-template>
+  <div class="charts__indicators">
+    <ng-container class="" *ngFor="let indicator of indicators; let i = index">
+      <div class="charts__indicators-item" *ngIf="watchDetailIndicator || i < 3 ">
+        <div class="item__circle" [style.background]="indicator.chartColor"></div>
+        <span class="item__text">{{indicator.title}}</span>
+        <span class="item__button" (click)="deleteItem(i)">🗙</span>
+      </div>
+    </ng-container>
+    <div class="charts__indicators-detail" *ngIf="!watchDetailIndicator && indicators.length > 3" (click)="watchDetailIndicator = true">
+      <span>Еще +{{indicators.length - 3}}</span>
+    </div>
+  </div>
+</div>
