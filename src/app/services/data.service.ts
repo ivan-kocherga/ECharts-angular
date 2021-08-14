@@ -271,8 +271,7 @@ export class DataService {
   }
 
   addActiveChartIndicator(index: number): void {
-    let check = this.activeChartIndicator$.value.filter(elem => this.indicators[index].title === elem.title)
-    if(check.length === 0) {
+    if(!this.activeChartIndicator$.value.includes(this.indicators[index])) {
       let newData = this.activeChartIndicator$.value.concat([this.indicators[index]])
       this.activeChartIndicator$.next(newData)
     }
